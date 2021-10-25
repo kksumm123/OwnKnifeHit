@@ -9,7 +9,7 @@ public class KnifeCountUI : BaseUI<KnifeCountUI>
     Image baseIcon;
     protected override void Init()
     {
-        baseIcon = transform.Find("KnifeCountUI/Knives/BaseIcon").GetComponent<Image>();
+        baseIcon = transform.Find("Knives/BaseIcon").GetComponent<Image>();
     }
 
     public List<Image> knives = new List<Image>();

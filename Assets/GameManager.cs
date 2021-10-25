@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int knifeCount = 8;
+    [SerializeField] int knifeCount = 10;
     void Start()
     {
         KnifeCountUI.Instance.SetKnifeIcon(knifeCount);
