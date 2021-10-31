@@ -33,7 +33,7 @@ public class Board : MonoBehaviour
             return;
 
         // 나이프가 충돌
-        print("아얏 아포 힝");
+        ScoreUI.Instance.AddPoint(1);
         // 날라가는 칼 부수기
         Destroy(collision.collider.gameObject);
         // 아래위치에 박힌칼 생성, 부모는 보드
