@@ -34,5 +34,10 @@ public class FlyingKnife : MonoBehaviour
             rigid.AddForce(Vector2.down * bounceForceValue, ForceMode2D.Force);
             rigid.AddTorque(Random.Range(-torqueValue, torqueValue));
         }
+        else if (collision.collider.CompareTag("Apple"))
+        {
+            Destroy(collision.gameObject);
+            print("»ç°ú Æ÷ÀÎÆ® È¹µæ");
+        }
     }
 }
