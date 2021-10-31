@@ -3,14 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+public enum GameState
+{
+    None,
+    Playing,
+    GameOver,
+}
 
 public class GameManager : Singleton<GameManager>
 {
+    GameState m_gameState;
+    public GameState GameState
+    {
+        get => m_gameState;
+        set
+        {
+            if (m_gameState == value)
+                return;
+
+            Debug.Log($"GameState = {m_gameState} -> {value}");
+            m_gameState = value;
+        }
+    }
+
     private const string bulletKnifeGoString = "BulletKnife";
     GameObject bulletKnifeGo;
 
     void Start()
     {
+        GameState = GameState.Playing;
+
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Knife"),
                                        LayerMask.NameToLayer("Knife"),
                                        true);
