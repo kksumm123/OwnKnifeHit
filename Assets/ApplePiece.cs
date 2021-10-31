@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ApplePiece : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Rigidbody2D rigid;
+    [SerializeField] float dirX = 0.5f;
+    [SerializeField] float forceValue = 300;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Destroy(gameObject, 3);
+        rigid = GetComponent<Rigidbody2D>();
+        var dir = new Vector2(Random.Range(-dirX, dirX), 1);
+        rigid.AddForce(dir * forceValue, ForceMode2D.Force);
     }
 }

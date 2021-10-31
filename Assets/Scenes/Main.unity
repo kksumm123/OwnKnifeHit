@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819311619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1b586d7f2471954abad9847a55631df, type: 3}
   m_Name: 
@@ -1812,6 +1812,10 @@ PrefabInstance:
     - target: {fileID: 4607741668869365602, guid: c448de3253b05a445a4f9e9b99d02eef, type: 3}
       propertyPath: m_Name
       value: ApplePiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607741668869365602, guid: c448de3253b05a445a4f9e9b99d02eef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4607741668869365603, guid: c448de3253b05a445a4f9e9b99d02eef, type: 3}
       propertyPath: m_RootOrder
