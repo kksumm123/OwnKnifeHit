@@ -25,6 +25,7 @@ public class KnifeCountUI : BaseUI<KnifeCountUI>
         for (int i = 0; i < knifeCount; i++)
         {
             var newKnifeIcon = Instantiate(baseIcon, baseIcon.transform.parent);
+            newKnifeIcon.sprite = usableKnifeIcon;
             knives.Add(newKnifeIcon);
         }
         baseIcon.gameObject.SetActive(false);
