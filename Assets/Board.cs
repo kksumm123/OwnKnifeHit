@@ -5,15 +5,26 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     const string stuckedKnifeString = "StuckedKnife";
+    private const string appleParentGoString = "AppleParent";
     GameObject stuckedKnifeGo;
     void Start()
     {
         stuckedKnifeGo = (GameObject)Resources.Load(stuckedKnifeString);
+        appleParentGo = (GameObject)Resources.Load(appleParentGoString);
+        CreateApple();
     }
 
-    void Update()
+    int minAppleCount = 0;
+    int maxAppleCount = 3;
+    GameObject appleParentGo;
+    void CreateApple()
     {
-
+        var appleCount = Random.Range(minAppleCount, maxAppleCount + 1);
+        for (int i = 0; i < appleCount; i++)
+        {
+            var newApple = Instantiate(appleParentGo, transform);
+            newApple.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
                                        true);
         KnifeCountUI.Instance.SetKnifeIcon(knifeCount);
         bulletKnifeGo = (GameObject)Resources.Load(bulletKnifeGoString);
+
         CreateKnife();
     }
 
