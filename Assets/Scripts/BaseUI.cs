@@ -20,6 +20,7 @@ public class BaseUI<T> : Singleton<T> where T : MonoBehaviour
     protected void ShowUI()
     {
         gameObject.SetActive(true);
+        transform.SetAsLastSibling();
     }
     protected void CloseUI()
     {
