@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
             StartCoroutine(ClickedCo());
     }
 
+    internal void GameOver()
+    {
+        GameOverUI.Instance.ShowUI();
+    }
+
     bool isThrowable = false;
     IEnumerator ClickedCo()
     {

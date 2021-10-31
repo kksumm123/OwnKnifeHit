@@ -15,10 +15,17 @@ public class GameOverUI : BaseUI<GameOverUI>
         transform.Find("RestartButton")
                  .GetComponent<Button>().onClick
                  .AddListener(() => RestartGame());
+
+        CloseUI();
     }
 
     void RestartGame()
     {
         GameManager.instance.RestartGame();
+    }
+
+    new public void ShowUI()
+    {
+        base.ShowUI();
     }
 }
