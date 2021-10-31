@@ -24,13 +24,15 @@ public class FlyingKnife : MonoBehaviour
     2. 던지는 딜레이
     3. 던지는 나이프, 박힌 나이프 태그 구별
      */
-
+    float bounceForceValue = 300f;
+    float torqueValue = 30f;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("StuckedKnife"))
         {
             isThrowing = false;
-            rigid.AddForce(Vector2.down * 300f, ForceMode2D.Force);
+            rigid.AddForce(Vector2.down * bounceForceValue, ForceMode2D.Force);
+            rigid.AddTorque(Random.Range(-torqueValue, torqueValue));
         }
     }
 }
