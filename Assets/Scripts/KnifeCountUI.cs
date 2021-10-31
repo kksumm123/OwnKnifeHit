@@ -6,10 +6,16 @@ using UnityEngine.UI;
 
 public class KnifeCountUI : BaseUI<KnifeCountUI>
 {
+    const string usableKnifeIconString = "UsableKnife";
+    const string usedKnifeIconString = "UsedKnife";
     Image baseIcon;
+    Sprite usableKnifeIcon;
+    Sprite usedKnifeIcon;
     protected override void Init()
     {
         baseIcon = transform.Find("Knives/BaseIcon").GetComponent<Image>();
+        usableKnifeIcon = Resources.Load<Sprite>(usableKnifeIconString);
+        usedKnifeIcon = Resources.Load<Sprite>(usedKnifeIconString);
     }
 
     public List<Image> knives = new List<Image>();
@@ -22,5 +28,10 @@ public class KnifeCountUI : BaseUI<KnifeCountUI>
             knives.Add(newKnifeIcon);
         }
         baseIcon.gameObject.SetActive(false);
+    }
+
+    internal void IncreaseUsedKnife(int usedKnifeCount)
+    {
+        knives[knives.Count - usedKnifeCount].sprite = usedKnifeIcon;
     }
 }

@@ -7,16 +7,28 @@ public class GameManager : MonoBehaviour
 {
     private const string bulletKnifeGoString = "BulletKnife";
     GameObject bulletKnifeGo;
-    [SerializeField] int knifeCount = 10;
+
     void Start()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Knife"),
                                        LayerMask.NameToLayer("Knife"),
                                        true);
-        KnifeCountUI.Instance.SetKnifeIcon(knifeCount);
         bulletKnifeGo = (GameObject)Resources.Load(bulletKnifeGoString);
 
+        InitKnifeCount();
         CreateKnife();
+    }
+
+    [SerializeField] int usedKnifeCount = 0;
+    [SerializeField] int totalKnifeCount = 10;
+    private void InitKnifeCount()
+    {
+        KnifeCountUI.Instance.SetKnifeIcon(totalKnifeCount);
+    }
+    private void IncreaseUsedKnife()
+    {
+        usedKnifeCount++;
+        KnifeCountUI.Instance.IncreaseUsedKnife(usedKnifeCount);
     }
 
     void Update()
@@ -30,8 +42,11 @@ public class GameManager : MonoBehaviour
     {
         isThrowable = false;
         ThrowKnife();
+        IncreaseUsedKnife();
         yield return new WaitForSeconds(0.1f);
-        CreateKnife();
+
+        if (usedKnifeCount < totalKnifeCount)
+            CreateKnife();
     }
 
     GameObject currentKnife;
