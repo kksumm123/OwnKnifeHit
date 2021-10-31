@@ -35,7 +35,7 @@ public class FlyingKnife : MonoBehaviour
             isThrowing = false;
             rigid.AddForce(Vector2.down * bounceForceValue, ForceMode2D.Force);
             rigid.AddTorque(Random.Range(-torqueValue, torqueValue));
-            GameManager.instance.GameOver();
+            GameManager.Instance.GameOver();
         }
         else if (collision.collider.CompareTag("Apple"))
         {

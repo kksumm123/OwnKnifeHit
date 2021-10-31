@@ -21,7 +21,7 @@ public class GameOverUI : BaseUI<GameOverUI>
 
     void RestartGame()
     {
-        GameManager.instance.RestartGame();
+        GameManager.Instance.RestartGame();
     }
 
     new public void ShowUI()
