@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseUI<T> : Singleton<BaseUI<T>> where T : MonoBehaviour
+public class BaseUI<T> : Singleton<T> where T : MonoBehaviour
 {
     protected void Awake()
     {
