@@ -19,4 +19,9 @@ public class ScoreUI : BaseUI<ScoreUI>
         score += addValue;
         scoreText.text = score.ToString();
     }
+
+    internal int GetScore()
+    {
+        return score;
+    }
 }

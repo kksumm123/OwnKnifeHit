@@ -35,6 +35,9 @@ public class GameOverUI : BaseUI<GameOverUI>
     new public void ShowUI()
     {
         base.ShowUI();
+
+        scoreText.text = ScoreUI.Instance.GetScore().ToString();
+
         isRestartable = false;
         banner.DOLocalMoveY(originBannnerLocalPositionY + (Screen.height * 0.5f), 0);
         banner.DOLocalMoveY(originBannnerLocalPositionY, duration)
