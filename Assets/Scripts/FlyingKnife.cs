@@ -38,7 +38,7 @@ public class FlyingKnife : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Apple"))
         {
-            print("»ç°ú Æ÷ÀÎÆ® È¹µæ");
+            AppleScoreUI.Instance.AddApplePoint(1);
             CreateApplePiece(collision.collider.transform);
             Destroy(collision.gameObject);
         }
