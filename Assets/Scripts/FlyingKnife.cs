@@ -7,7 +7,7 @@ public class FlyingKnife : MonoBehaviour
     [SerializeField] float speed = 25f;
     Vector2 moveDirection = new Vector2(0, 1);
     Rigidbody2D rigid;
-    private void Start()
+    void Start()
     {
         Destroy(gameObject, 5);
         rigid = GetComponent<Rigidbody2D>();
@@ -45,7 +45,7 @@ public class FlyingKnife : MonoBehaviour
         }
     }
 
-    private const string applePieceGoString = "ApplePiece";
+    const string applePieceGoString = "ApplePiece";
     GameObject applePieceGo;
     private void CreateApplePiece(Transform appleSprite)
     {
