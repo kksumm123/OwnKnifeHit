@@ -61,12 +61,13 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        if (Input.anyKeyDown && isThrowable == true)
+        if (Input.anyKeyDown && isThrowable == true && GameState == GameState.Playing)
             StartCoroutine(ClickedCo());
     }
 
     internal void GameOver()
     {
+        GameState = GameState.GameOver;
         GameOverUI.Instance.ShowUI();
     }
 
