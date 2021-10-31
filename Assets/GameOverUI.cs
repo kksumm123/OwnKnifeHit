@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class GameOverUI : BaseUI<GameOverUI>
     Text scoreText;
     Text stageText;
     Transform banner;
+    float originBannnerLocalPositionY;
     protected override void Init()
     {
         scoreText = transform.Find("Banner/ScoreText").GetComponent<Text>();
@@ -17,6 +19,8 @@ public class GameOverUI : BaseUI<GameOverUI>
         transform.Find("RestartButton")
                  .GetComponent<Button>().onClick
                  .AddListener(() => RestartGame());
+
+        originBannnerLocalPositionY = banner.transform.localPosition.y;
         CloseUI();
     }
 
@@ -28,6 +32,7 @@ public class GameOverUI : BaseUI<GameOverUI>
     new public void ShowUI()
     {
         base.ShowUI();
-
+        banner.DOLocalMoveY(originBannnerLocalPositionY + (Screen.height * 0.5f), 0);
+        banner.DOLocalMoveY(originBannnerLocalPositionY, 2f).SetEase(Ease.OutBounce);
     }
 }
