@@ -12,6 +12,7 @@ public class FlyingKnife : MonoBehaviour
         Destroy(gameObject, 5);
         rigid = GetComponent<Rigidbody2D>();
         applePieceGo = (GameObject)Resources.Load(applePieceGoString);
+        Debug.Assert(applePieceGo != null, "ÀÌ°Ç null µÇ¸é ¾ÈµÅ");
         isThrowing = true;
     }
     bool isThrowing = false;
@@ -37,19 +38,20 @@ public class FlyingKnife : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Apple"))
         {
-            Destroy(collision.gameObject);
             print("»ç°ú Æ÷ÀÎÆ® È¹µæ");
-            CreateApplePiece();
+            CreateApplePiece(collision.collider.transform);
+            Destroy(collision.gameObject);
         }
     }
 
-    private const string applePieceGoString = "ApplePieceGo";
+    private const string applePieceGoString = "ApplePiece";
     GameObject applePieceGo;
-    private void CreateApplePiece()
+    private void CreateApplePiece(Transform appleSprite)
     {
         for (int i = 0; i < 2; i++)
         {
             var newApplePiece = Instantiate(applePieceGo);
+            newApplePiece.transform.position = appleSprite.position;
         }
     }
 }
