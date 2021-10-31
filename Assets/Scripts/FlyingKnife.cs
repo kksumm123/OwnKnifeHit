@@ -11,6 +11,7 @@ public class FlyingKnife : MonoBehaviour
     {
         Destroy(gameObject, 5);
         rigid = GetComponent<Rigidbody2D>();
+        applePieceGo = (GameObject)Resources.Load(applePieceGoString);
         isThrowing = true;
     }
     bool isThrowing = false;
@@ -38,6 +39,17 @@ public class FlyingKnife : MonoBehaviour
         {
             Destroy(collision.gameObject);
             print("»ç°ú Æ÷ÀÎÆ® È¹µæ");
+            CreateApplePiece();
+        }
+    }
+
+    private const string applePieceGoString = "ApplePieceGo";
+    GameObject applePieceGo;
+    private void CreateApplePiece()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            var newApplePiece = Instantiate(applePieceGo);
         }
     }
 }
