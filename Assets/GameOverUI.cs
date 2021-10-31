@@ -24,15 +24,21 @@ public class GameOverUI : BaseUI<GameOverUI>
         CloseUI();
     }
 
+    bool isRestartable = false;
     void RestartGame()
     {
-        GameManager.Instance.RestartGame();
+        if (isRestartable)
+            GameManager.Instance.RestartGame();
     }
 
+    float duration = 2f;
     new public void ShowUI()
     {
         base.ShowUI();
+        isRestartable = false;
         banner.DOLocalMoveY(originBannnerLocalPositionY + (Screen.height * 0.5f), 0);
-        banner.DOLocalMoveY(originBannnerLocalPositionY, 2f).SetEase(Ease.OutBounce);
+        banner.DOLocalMoveY(originBannnerLocalPositionY, duration)
+              .SetEase(Ease.OutBounce)
+              .OnComplete(() => isRestartable = true);
     }
 }

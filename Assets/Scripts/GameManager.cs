@@ -42,11 +42,6 @@ public class GameManager : Singleton<GameManager>
         CreateKnife();
     }
 
-    internal void RestartGame()
-    {
-        SceneManager.LoadScene(0);
-    }
-
     [SerializeField] int usedKnifeCount = 0;
     [SerializeField] int totalKnifeCount = 10;
     private void InitKnifeCount()
@@ -63,12 +58,6 @@ public class GameManager : Singleton<GameManager>
     {
         if (Input.anyKeyDown && isThrowable == true && GameState == GameState.Playing)
             StartCoroutine(ClickedCo());
-    }
-
-    internal void GameOver()
-    {
-        GameState = GameState.GameOver;
-        GameOverUI.Instance.ShowUI();
     }
 
     bool isThrowable = false;
@@ -94,5 +83,18 @@ public class GameManager : Singleton<GameManager>
     {
         currentKnife.GetComponent<FlyingKnife>().enabled = true;
     }
+
+    #region Methods
+    internal void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    internal void GameOver()
+    {
+        GameState = GameState.GameOver;
+        GameOverUI.Instance.ShowUI();
+    }
+    #endregion Methods
 }
 
