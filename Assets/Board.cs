@@ -20,5 +20,6 @@ public class Board : MonoBehaviour
             return;
 
         // 나이프가 충돌
+        print("아얏 아포 힝");
     }
 }
