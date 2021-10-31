@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] int knifeCount = 10;
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Knife"),
+                                       LayerMask.NameToLayer("Knife"),
+                                       true);
         KnifeCountUI.Instance.SetKnifeIcon(knifeCount);
         bulletKnifeGo = (GameObject)Resources.Load(bulletKnifeGoString);
         CreateKnife();
