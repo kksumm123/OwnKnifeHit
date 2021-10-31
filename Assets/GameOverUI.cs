@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverUI : BaseUI<GameOverUI>
+public class GameOverUI : BaseUI<GameOverUI>    
 {
     Text scoreText;
     Text stageText;
@@ -19,6 +19,6 @@ public class GameOverUI : BaseUI<GameOverUI>
 
     void RestartGame()
     {
-        GameManager.Instance.RestartGame();
+        GameManager.instance.RestartGame();
     }
 }

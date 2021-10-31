@@ -2,9 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    void Awake() => instance = this;
+
     private const string bulletKnifeGoString = "BulletKnife";
     GameObject bulletKnifeGo;
 
@@ -17,6 +21,11 @@ public class GameManager : MonoBehaviour
 
         InitKnifeCount();
         CreateKnife();
+    }
+
+    internal void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     [SerializeField] int usedKnifeCount = 0;
