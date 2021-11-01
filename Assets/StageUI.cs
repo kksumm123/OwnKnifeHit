@@ -17,6 +17,7 @@ public class StageUI : BaseUI<StageUI>
     {
         whiteScreenCanvasGroup.alpha = 1;
         DOTween.To(() => 1, x => whiteScreenCanvasGroup.alpha = x, 0, whiteScreenDuration)
-               .OnComplete(() => GameManager.Instance.GameState = GameState.Playing);
+               .OnComplete(() => GameManager.Instance.GameState = GameState.Playing)
+               .SetLink(gameObject);
     }
 }
