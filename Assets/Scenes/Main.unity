@@ -2290,6 +2290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Board
       objectReference: {fileID: 0}
+    - target: {fileID: 1828627291819643042, guid: 7b5bec93fc25efc4b84677b948f30c00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1828627291819643044, guid: 7b5bec93fc25efc4b84677b948f30c00, type: 3}
       propertyPath: m_RootOrder
       value: 5
