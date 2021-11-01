@@ -15,10 +15,12 @@ public class StageManager : Singleton<StageManager>
         CreateNewBoard();
     }
 
-    void NextStage()
+    public void NextStage()
     {
+        DestroyBoard();
         GameManager.Instance.GameState = GameState.Loading;
         StageUI.Instance.WhiteScreen();
+        CreateNewBoard();
     }
 
     GameObject currentBoard;
