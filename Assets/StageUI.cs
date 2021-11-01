@@ -35,11 +35,17 @@ public class StageUI : BaseUI<StageUI>
     float colorStepValue = 10f;
     internal void IncreaseStageValue()
     {
+        // 색깔 바꿔주기
         Color.RGBToHSV(stageIcons[stage % 5].color, out h, out s, out v);
         stageIcons[stage % 5].color = Color.HSVToRGB((1f / 256) * colorStepValue + h, 1, 1);
 
+        // 스테이지 증가
         stage++;
         stageValue.text = $"STAGE {stage}";
+
+        // 스테이지가 5의 배수일 때, 토탈 나이프 카운트 1 증가
+        if (stage % 5 == 0)
+            GameManager.Instance.IncreaseTotalKnifeCount();
     }
 
     internal int GetStageValue()

@@ -1680,8 +1680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -227.4, y: 116.6}
-  m_SizeDelta: {x: 0, y: 311.64}
+  m_AnchoredPosition: {x: -227.4, y: 65.7}
+  m_SizeDelta: {x: 0, y: 804.85}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1307730756
 MonoBehaviour:
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usedKnifeCount: 0
-  totalKnifeCount: 1
+  totalKnifeCount: 7
 --- !u!4 &1391740764
 Transform:
   m_ObjectHideFlags: 0

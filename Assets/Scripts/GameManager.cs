@@ -44,13 +44,15 @@ public class GameManager : Singleton<GameManager>
     }
 
     [SerializeField] int usedKnifeCount = 0;
-    [SerializeField] int totalKnifeCount = 10;
+    // 초기 시작 토탈 카운트 7, 스테이지 5개 넘어갈 때마다 1씩 증가
+    [SerializeField] int totalKnifeCount = 7;
     private void InitKnifeCount()
     {
         hitKnifeCount = 0;
         usedKnifeCount = 0;
         KnifeCountUI.Instance.SetKnifeIcon(totalKnifeCount);
     }
+
     private void IncreaseUsedKnife()
     {
         usedKnifeCount++;
@@ -88,6 +90,12 @@ public class GameManager : Singleton<GameManager>
     }
 
     #region Methods
+    internal void IncreaseTotalKnifeCount()
+    {
+        // 스테이지가 5의 배수일 때, 토탈 나이프 카운트 1 증가
+        totalKnifeCount++;
+    }
+
     int hitKnifeCount = 0;
     internal void KnifeHit()
     {
@@ -103,6 +111,7 @@ public class GameManager : Singleton<GameManager>
             CreateKnife();
         }
     }
+
     internal void RestartGame()
     {
         SceneManager.LoadScene(0);
