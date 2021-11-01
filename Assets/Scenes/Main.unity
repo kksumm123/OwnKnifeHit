@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usedKnifeCount: 0
-  totalKnifeCount: 10
+  totalKnifeCount: 1
 --- !u!4 &1391740764
 Transform:
   m_ObjectHideFlags: 0

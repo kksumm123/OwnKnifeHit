@@ -29,9 +29,15 @@ public class StageUI : BaseUI<StageUI>
                .SetLink(gameObject);
     }
 
+    float h;
+    float s;
+    float v;
+    float colorStepValue = 10f;
     internal void IncreaseStageValue()
     {
-        stageIcons[stage].color = Color.yellow;
+        Color.RGBToHSV(stageIcons[stage % 5].color, out h, out s, out v);
+        stageIcons[stage % 5].color = Color.HSVToRGB((1f / 256) * colorStepValue + h, 1, 1);
+
         stage++;
         stageValue.text = $"STAGE {stage}";
     }
