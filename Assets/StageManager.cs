@@ -15,6 +15,12 @@ public class StageManager : Singleton<StageManager>
         CreateNewBoard();
     }
 
+    void NextStage()
+    {
+        GameManager.Instance.GameState = GameState.Loading;
+        ScoreUI.Instance.WhiteScreen();
+    }
+
     GameObject currentBoard;
     void CreateNewBoard()
     {

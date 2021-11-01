@@ -8,6 +8,7 @@ public enum GameState
     None,
     Playing,
     GameOver,
+    Loading,
 }
 
 public class GameManager : Singleton<GameManager>
