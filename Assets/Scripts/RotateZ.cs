@@ -12,6 +12,7 @@ public class RotateZ : MonoBehaviour
     [SerializeField] Ease ease = Ease.InOutCubic;
     IEnumerator Start()
     {
+        transform.eulerAngles = new Vector3(0, 0, Random.Range(0, 360));
         while (true)
         {
             isEnd = false;
