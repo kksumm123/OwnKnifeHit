@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class StageUI : BaseUI<StageUI>
 {
+    public List<Image> stageIcons = new List<Image>();
     int stage = 0;
     Text stageValue;
     void Start()
@@ -30,6 +31,7 @@ public class StageUI : BaseUI<StageUI>
 
     internal void IncreaseStageValue()
     {
+        stageIcons[stage].color = Color.yellow;
         stage++;
         stageValue.text = $"STAGE {stage}";
     }
