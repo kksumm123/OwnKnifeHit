@@ -33,4 +33,9 @@ public class StageUI : BaseUI<StageUI>
         stage++;
         stageValue.text = $"STAGE {stage}";
     }
+
+    internal int GetStageValue()
+    {
+        return stage;
+    }
 }

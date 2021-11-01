@@ -37,6 +37,7 @@ public class GameOverUI : BaseUI<GameOverUI>
         base.ShowUI();
 
         scoreText.text = ScoreUI.Instance.GetScore().ToString();
+        stageText.text = $"STAGE {StageUI.Instance.GetStageValue()}";
 
         isRestartable = false;
         banner.DOLocalMoveY(originBannnerLocalPositionY + (Screen.height * 0.5f), 0);
