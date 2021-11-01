@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class RotateZ : MonoBehaviour
 {
-    [SerializeField] float minZ = 1000f;
-    [SerializeField] float maxZ = 1800f;
+    [SerializeField] float minZ = 800f;
+    [SerializeField] float maxZ = 1300f;
     [SerializeField] float duration = 5f;
     bool isEnd = false;
     [SerializeField] Ease ease = Ease.InOutCubic;

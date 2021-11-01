@@ -32,7 +32,7 @@ public class StageUI : BaseUI<StageUI>
     float h;
     float s;
     float v;
-    float colorStepValue = 10f;
+    float colorStepValue = 30f;
     internal void IncreaseStageValue()
     {
         // »ö±ò ¹Ù²ãÁÖ±â

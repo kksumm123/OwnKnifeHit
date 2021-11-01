@@ -43,6 +43,7 @@ public class GameOverUI : BaseUI<GameOverUI>
         banner.DOLocalMoveY(originBannnerLocalPositionY + (Screen.height * 0.5f), 0);
         banner.DOLocalMoveY(originBannnerLocalPositionY, duration)
               .SetEase(Ease.OutBounce)
-              .OnComplete(() => isRestartable = true);
+              .OnComplete(() => isRestartable = true)
+              .SetLink(gameObject);
     }
 }
