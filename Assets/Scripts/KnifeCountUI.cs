@@ -22,7 +22,7 @@ public class KnifeCountUI : BaseUI<KnifeCountUI>
     public void SetKnifeIcon(int knifeCount)
     {
         baseIcon.gameObject.SetActive(true);
-        knives.ForEach(x => Destroy(x));
+        knives.ForEach(x => Destroy(x.gameObject));
         knives.Clear();
         for (int i = 0; i < knifeCount; i++)
         {
