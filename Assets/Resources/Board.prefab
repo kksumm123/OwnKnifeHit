@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b586d7f2471954abad9847a55631df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minZ: 1000
-  maxZ: 1800
+  minZ: 800
+  maxZ: 1300
   duration: 5
   ease: 10
 --- !u!114 &1828627291819643046
