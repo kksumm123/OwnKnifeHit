@@ -18,7 +18,7 @@ public class StageManager : Singleton<StageManager>
     void NextStage()
     {
         GameManager.Instance.GameState = GameState.Loading;
-        ScoreUI.Instance.WhiteScreen();
+        StageUI.Instance.WhiteScreen();
     }
 
     GameObject currentBoard;
