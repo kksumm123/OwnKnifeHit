@@ -76,6 +76,9 @@ public class GameManager : Singleton<GameManager>
             // 칼을 전부 꽂앗다 다음 스테이지 가자
             // 보드를 부수고 새 보드를 가져온다
             StageManager.Instance.NextStage();
+            // 버그있음 !, 칼을 던지자마자 다음 스테이지를 로드해버림
+            // 칼이 박혔는지 확인하고 넘어가야함
+
             // 칼을 다시 충전해줘야 한다 (카운트 초기화 및 icon 재 설정)
         }
             
