@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class StageManager : Singleton<StageManager>
 {
-    // Start is called before the first frame update
+    int stage = 0;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
